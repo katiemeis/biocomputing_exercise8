@@ -26,3 +26,32 @@ for i in range(0, len(data)):
         MSU_score += data.iloc[i,2]
         
     scores.loc[len(scores)]=[data.iloc[i,0], UW_score, MSU_score]
+
+plt.plot(scores.time, scores.UW,'-r', scores.time, scores.MSU, '-g')
+
+
+#2
+import random
+
+user_guess=-1
+num=random.randint(0,100)
+
+print("I'm thinking of a number 1-100...")
+print(num)
+
+while(True):
+    user_guess = raw_input('Guess: ')
+    user_guess = int(user_guess)
+    
+    if user_guess < num:
+        print("Higher")
+        
+    elif user_guess > num:
+        print("Lower")
+        
+    else:
+        print("Correct!")
+        break
+
+
+         
