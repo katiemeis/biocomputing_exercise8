@@ -32,20 +32,30 @@ plt.plot(time,UWscore,'r-',time,MSUscore,'g-')
 import numpy
 
 list=range(1,100)
+user_guess=0
 
 def numbergame():
     numberchoice=numpy.random.choice(list)
     print ('Im thinking of a number 1-100...')
-    user_guess=raw_input('guess:')
-    if user_guess>numberchoice:
-        print ('Lower')
-        raw_input(['guess:'])
-    elif user_guess<numberchoice:
-        print ('Lower')
-        raw_input(['guess:'])
-    else:
-        print ('Correct!')
-        break
+    user_guess=raw_imput('guess:')
+    while user_guess!=numberchoice:
+        if user_guess > numberchoice:
+            print ('Lower')
+        elif user_guess < numberchoice:
+            print ('Lower')
+        else:
+            print ('Correct!')
+    
+numbergame()
+
+
+
+
+
+
+
+
+
     
         
 
