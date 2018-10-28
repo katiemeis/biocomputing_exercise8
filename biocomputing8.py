@@ -25,15 +25,15 @@ for i in range(0,len(scores)):
     
     
 import matplotlib.pyplot as plt
-plt.plot(time,UWscore,'r-',time,MSUscore,'g-')
+plt.plot(scoresframe.time,scoresframe.UW,'r-',scoresframe.time,scoresframe.MSU,'g-')
 
 #2 guess my number
 
 import numpy
 
 list=range(1,100)
-numberchoice=numpy.random.choice(list)
 def numbergame():
+    numberchoice=numpy.random.choice(list)
     print ('Im thinking of a number 1-100...')
     user_guess=int(raw_input('guess:'))
     while user_guess!=numberchoice:
@@ -45,6 +45,7 @@ def numbergame():
             user_guess=int(raw_input('guess:'))    
     if user_guess==numberchoice:
         print ('Correct!')
+        
 
 numbergame()
 
