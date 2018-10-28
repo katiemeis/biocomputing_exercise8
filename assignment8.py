@@ -37,7 +37,7 @@ user_guess=-1
 num=random.randint(0,100)
 
 print("I'm thinking of a number 1-100...")
-print(num)
+#print(num)
 
 while(True):
     user_guess = raw_input('Guess: ')
