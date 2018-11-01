@@ -1,10 +1,9 @@
 #Exercise 8 
 
+#Number 1
 import pandas as pd
 UWvMSU=pd.read_csv('UWvMSu_1-22-13.txt', header=0, sep="\t")
-print(UWvMSU)
 
-#done
 score=pd.DataFrame(columns=['time', 'UWscore', 'MSUscore'])
 MSUscore=0
 UWscore=0
@@ -17,41 +16,30 @@ for i in range(1,len(UWvMSU)):
         time=UWvMSU.iloc[i,0]
         MSUscore=MSUscore+UWvMSU.iloc[i,2]
         score=score.append({'time':time,'UWscore':UWscore, 'MSUscore':MSUscore},ignore_index=True)
-print(score)
-
+score.head(10)
 
 import matplotlib.pyplot as plt
 
-fig=plt.pyplot.figure(figsize=(3.0,3.0))
-axes1 = fig.add_subplot(1, 1, 1)
-axes1.set_ylabel('y-axis')
-axes1.set_xlabel('x-axis')
-axes1.plot(score)
-fig.tight_layout()
-plt.pyplot.show()
+plt.plot('time','UWscore',data=score)
+plt.plot('time', 'MSUscore', data=score)
 
-
-
-plt.plot(time,UWscore,'r-',time,MSUscore,'g-')
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+#Number 2
+import numpy as np
+number=np.random.choice(100,1)
+i='False' 
+ 
+while i =='False':
+    guess=raw_input("I'm thinking of a number 1-100, whats your guess?")
+    guessint=int(guess)
+   
+    if guessint>number:
+        print("Guess Lower")
+    elif guessint<number:
+        print("Guess Higher")
+    else:
+        print("Correct!")
+        i='True'  
+    
 
 
 
