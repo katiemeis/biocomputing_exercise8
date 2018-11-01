@@ -4,7 +4,7 @@ import pandas as pd
 UWvMSU=pd.read_csv('UWvMSu_1-22-13.txt', header=0, sep="\t")
 print(UWvMSU)
 
-#I think this is right but keep getting the an out-of-bounds integer on line 7
+#done
 score=pd.DataFrame(columns=['time', 'UWscore', 'MSUscore'])
 MSUscore=0
 UWscore=0
