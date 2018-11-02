@@ -1,0 +1,57 @@
+#!/usr/bin/env python2
+# -*- coding: utf-8 -*-
+"""
+Created on Fri Oct 26 10:48:09 2018
+
+@author: MeganHartle
+"""
+
+#Problem #1
+# I was having trouble with importing the plotting module, and we tried a lot of things
+# in lecture on Wednesday and I ended up uninstalling some things and now I am getting
+# errors saying missing required dependencies, and I tried to troubleshoot and add it 
+# back in but it says it's already installed. I think this is the right code, but I may 
+# need your help tomorrow with loading it on my computer again.
+
+import pandas as pd
+import numpy as np
+import matplotlib.pyplot as plt
+
+
+bballgame = pd.read_csv('UWvMSU_1-22-13.txt', sep = '\t')
+
+out=pd.DataFrame(columns=['time','scoreUW','scoreMSU'])
+
+scoreMSU=0
+scoreUW=0
+
+
+for x in range(0,len(bballgame)):
+    if bballgame.team.iloc[x] == 'MSU':
+        scoreMSU += bballgame.score[x]
+        out.loc[len(out)]=[bballgame.time[x],scoreUW,scoreMSU]
+    elif bballgame.team.iloc[x] == 'UW':
+        scoreUW += bballgame.score[x]
+        out.loc[len(out)]=[bballgame.time[x],scoreUW,scoreMSU]
+
+
+plt.plot(out.time,out.scoreUW, 'r-',out.time,out.scoreMSU, 'g-')
+
+
+#Problem #2
+
+import random
+number = random.randint(1,100)
+userguess = input("Please guess a number between 1 and 100: ")
+
+while userguess != number:
+    if (userguess > number):
+        print("Too high")
+    elif (userguess < number):
+        print ("Too low")
+        
+        userguess = input("Please guess again: ")
+        break
+        
+
+print("You guessed correctly!")
